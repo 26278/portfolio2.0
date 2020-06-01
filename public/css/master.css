@@ -1,0 +1,257 @@
+/* -=-=-=-=-=- GENERAL CSS -=-=-=-=-=- */
+
+html {
+    font-size: 12px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+img {
+    flex-shrink: 0;
+}
+
+/* -=-=-=-=-=- FONTS -=-=-=-=-=- */
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("../assets/fonts/OpenSans-Regular.woff2");
+}
+
+@font-face {
+    font-family: "OpenSans-Bold";
+    src: url("../assets/fonts/OpenSans-Bold.woff2");
+}
+
+@font-face {
+    font-family: "OpenSans-BoldItalic";
+    src: url("../assets/fonts/OpenSans-BoldItalic.woff2");
+}
+
+@font-face {
+    font-family: "OpenSans-ExtraBold";
+    src: url("../assets/fonts/OpenSans-ExtraBold.woff2");
+}
+
+@font-face {
+    font-family: "OpenSans-ExtraBoldItalic";
+    src: url("../assets/fonts/OpenSans-ExtraBoldItalic.woff2");
+}
+
+@font-face {
+    font-family: "OpenSans-Italic";
+    src: url("../assets/fonts/OpenSans-Italic.woff2");
+}
+
+@font-face {
+    font-family: "OpenSans-Light";
+    src: url("../assets/fonts/OpenSans-Light.woff2");
+}
+
+@font-face {
+    font-family: "OpenSans-LightItalic";
+    src: url("../assets/fonts/OpenSans-LightItalic.woff2");
+}
+
+@font-face {
+    font-family: "OpenSans-SemiBold";
+    src: url("../assets/fonts/OpenSans-SemiBold.woff2");
+}
+
+@font-face {
+    font-family: "OpenSans-SemiBoldItalic";
+    src: url("../assets/fonts/OpenSans-SemiBoldItalic.woff2");
+}
+
+@font-face {
+    font-family: "Ubuntu-Medium";
+    src: url("../assets/fonts/Ubuntu-Medium.woff2");
+}
+
+@font-face {
+    font-family: "Ubuntu-MediumItalic";
+    src: url("../assets/fonts/Ubuntu-MediumItalic.woff2");
+}
+
+/* -=-=-=-=-=- NAV -=-=-=-=-=- */
+
+nav {
+    position: relative;
+    background: #008972;
+    color: white;
+    width: 100%;
+    height: 100px;
+    box-shadow: 0px 3px 6px #0000001a;
+}
+
+.nav-content {
+    position: relative;
+    width: 1033.3px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-title {
+    font-family: Ubuntu-Medium, sans-serif;
+    font-size: 24px;
+    white-space: nowrap;
+    color: #fff;
+    text-decoration: none;
+}
+
+.regular {
+    font-family: OpenSans-Light, sans-serif;
+    font-size: 20px;
+}
+
+.nav-right {
+    position: relative;
+    display: flex;
+}
+
+.nav-el {
+    font-family: OpenSans-Light, sans-serif;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    margin-left: 20px;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: .22s;
+    fill: #fff;
+
+}
+
+.nav-active {
+    font-family: OpenSans-SemiBold;
+    display: flex;
+}
+
+
+.active-line {
+    position: absolute;
+    bottom: -15px;
+    height: 2px;
+    border-width: 0;
+    color: #3AC2A6;
+    background-color: #88EAD6;
+    display: none;
+}
+
+#line-home {
+    width: 132px;
+}
+
+#line-projects {
+    width: 107px;
+}
+
+#line-aboutMe {
+    width: 100px;
+}
+
+#line-contact {
+    width: 96px;
+}
+
+.nav-right svg {
+    height: 20px;
+    width: auto;
+    margin-right: 4px;
+}
+
+.nav-el:hover {
+    color: #88EAD6;
+    fill: #88EAD6;
+}
+
+#contact-icon {
+    margin-right: 6px;
+}
+
+
+main {
+    position: relative;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background-color: #188972;
+}
+
+.footer-content {
+    position: relative;
+    width: 1033.3px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+.copyright {
+    font-family: OpenSans-Light, sans-serif;
+    color: #fff;
+}
+
+.footer-right {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.social {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    fill: #fff;
+    color: #fff;
+    font-family: OpenSans-Light, sans-serif;
+    margin: 5px 0;
+    text-decoration: none;
+    font-size: 16px;
+    transition: .22s;
+
+}
+
+.social:hover {
+    color: #88EAD6;
+    fill: #88EAD6;
+}
+
+.social > svg {
+    height: 20px;
+    width: auto;
+    margin-right: 6.5px;
+}
