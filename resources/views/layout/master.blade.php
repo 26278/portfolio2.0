@@ -7,9 +7,38 @@
     <link rel="stylesheet" href="/css/master.css">
     <link rel="stylesheet" href="/css/{{$css}}.css">
     <title>Jochem de Wit - {{$page}}</title>
+    <link rel="stylesheet" href="/css/sideNav.css">
+
     @yield('stylesheets')
 </head>
 <body>
+<div id="sidenavBackground"></div>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a class="nav-el @if($active === 'home')nav-active @else() @endif" href="/">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        Homepagina
+        <hr id="line-home" class="active-line" @if($active === 'home') style="display: block;" @else() @endif>
+    </a>
+    <a class="nav-el @if($active === 'projecten')nav-active @else() @endif" href="/projecten">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
+        Projecten
+        <hr id="line-projects" class="active-line"
+            @if($active === 'projecten') style="display: block;" @else() @endif>
+    </a>
+    <a class="nav-el @if($active === 'overmij')nav-active @else() @endif" href="/over-mij">
+        <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><g><g><path d="M12,2C8.14,2,5,5.14,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.14,15.86,2,12,2z M12,4c1.1,0,2,0.9,2,2c0,1.11-0.9,2-2,2 s-2-0.89-2-2C10,4.9,10.9,4,12,4z M12,14c-1.67,0-3.14-0.85-4-2.15c0.02-1.32,2.67-2.05,4-2.05s3.98,0.73,4,2.05 C15.14,13.15,13.67,14,12,14z"/></g></g></g></svg>
+        Over mij
+        <hr id="line-aboutMe" class="active-line"
+            @if($active === 'overmij') style="display: block;" @else() @endif>
+    </a>
+    <a class="nav-el @if($active === 'contact')nav-active @else() @endif" href="/contact">
+        <svg id="contact-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M0 0h24v24H0z" fill="none"/><path d="M21 8V7l-3 2-3-2v1l3 2 3-2zm1-5H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 1.99-.9 1.99-2L24 5c0-1.1-.9-2-2-2zM8 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H2v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1zm8-6h-8V6h8v6z"/></svg>
+        Contact
+        <hr id="line-contact" class="active-line"
+            @if($active === 'contact') style="display: block;" @else() @endif>
+    </a>
+</div>
 <nav>
     <div class="nav-content">
         <div class="nav-left">
@@ -17,52 +46,30 @@
         </div>
         <div class="nav-right">
             <a class="nav-el @if($active === 'home')nav-active @else() @endif" href="/">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px">
-                    <path d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18px" height="18px"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
                 Homepagina
                 <hr id="line-home" class="active-line" @if($active === 'home') style="display: block;" @else() @endif>
             </a>
             <a class="nav-el @if($active === 'projecten')nav-active @else() @endif" href="/projecten">
-                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/></svg>
                 Projecten
                 <hr id="line-projects" class="active-line"
                     @if($active === 'projecten') style="display: block;" @else() @endif>
             </a>
             <a class="nav-el @if($active === 'overmij')nav-active @else() @endif" href="/over-mij">
-                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24"
-                     viewBox="0 0 24 24" width="24">
-                    <g>
-                        <rect fill="none" height="24" width="24"/>
-                    </g>
-                    <g>
-                        <g>
-                            <g>
-                                <path d="M12,2C8.14,2,5,5.14,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.14,15.86,2,12,2z M12,4c1.1,0,2,0.9,2,2c0,1.11-0.9,2-2,2 s-2-0.89-2-2C10,4.9,10.9,4,12,4z M12,14c-1.67,0-3.14-0.85-4-2.15c0.02-1.32,2.67-2.05,4-2.05s3.98,0.73,4,2.05 C15.14,13.15,13.67,14,12,14z"/>
-                            </g>
-                        </g>
-                    </g>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="24" viewBox="0 0 24 24" width="24"><g><rect fill="none" height="24" width="24"/></g><g><g><g><path d="M12,2C8.14,2,5,5.14,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.14,15.86,2,12,2z M12,4c1.1,0,2,0.9,2,2c0,1.11-0.9,2-2,2 s-2-0.89-2-2C10,4.9,10.9,4,12,4z M12,14c-1.67,0-3.14-0.85-4-2.15c0.02-1.32,2.67-2.05,4-2.05s3.98,0.73,4,2.05 C15.14,13.15,13.67,14,12,14z"/></g></g></g></svg>
                 Over mij
                 <hr id="line-aboutMe" class="active-line"
                     @if($active === 'overmij') style="display: block;" @else() @endif>
             </a>
             <a class="nav-el @if($active === 'contact')nav-active @else() @endif" href="/contact">
-                <svg id="contact-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-                    <path d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M0 0h24v24H0z" fill="none"/>
-                    <path d="M21 8V7l-3 2-3-2v1l3 2 3-2zm1-5H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 1.99-.9 1.99-2L24 5c0-1.1-.9-2-2-2zM8 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H2v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1zm8-6h-8V6h8v6z"/>
-                </svg>
+                <svg id="contact-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M0 0h24v24H0z" fill="none"/><path d="M21 8V7l-3 2-3-2v1l3 2 3-2zm1-5H2C.9 3 0 3.9 0 5v14c0 1.1.9 2 2 2h20c1.1 0 1.99-.9 1.99-2L24 5c0-1.1-.9-2-2-2zM8 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm6 12H2v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1v1zm8-6h-8V6h8v6z"/></svg>
                 Contact
                 <hr id="line-contact" class="active-line"
                     @if($active === 'contact') style="display: block;" @else() @endif>
-
             </a>
         </div>
+        <svg class="menu-icon" onclick="openNav()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M2 15.5v2h20v-2H2zm0-5v2h20v-2H2zm0-5v2h20v-2H2z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
     </div>
 </nav>
 </div>
@@ -95,5 +102,6 @@
 </footer>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
 <script type="text/javascript" src="/js/master.js"></script>
+<script type="text/javascript" src="/js/sidenav.js"></script>
 <script type="text/javascript" src="/js/{{$css}}.js"></script>
 </body>
