@@ -30,16 +30,19 @@
     font-size: 16px;
 }
 .title{
-    font-family: Ubuntu-Medium, sans-serif;
+    font-family: Ubuntu-MediumItalic, sans-serif;
     font-size: 24px;
     width: 80%;
     margin: 0 auto;
 }
 .subtitle{
-    font-family: Ubuntu-MediumItalic, sans-serif;
+    font-family: Ubuntu-Medium, sans-serif;
     font-size: 14px;
     width: 80%;
     margin: .8em auto 1em auto;
+}
+.subtitle span{
+    font-size: 2em;
 }
 .line{
     width: 90%;
@@ -154,10 +157,10 @@
         margin-bottom: .8em;
     }
     .title{
-        font-size: 44px;
+        font-size: 24px;
     }
     .subtitle{
-        font-size: 24px;
+        font-size: 19px;
         margin-top: .8em;
     }
     .line{

@@ -6,7 +6,7 @@
         <div class="left">
             <p class="call" style="opacity: 0">Hallo!</p>
             <h2 class="title" style="opacity: 0">Ik ben Jochem de Wit,</h2>
-            <p class="subtitle" style="opacity: 0">een Fullstack Developer in opleiding.</p>
+            <p class="subtitle" style="opacity: 0">een<span> Fullstack Developer </span>in opleiding.</p>
             <hr class="line desktop" style="opacity: 0">
             <img src="/assets/images/me.jpeg" alt="Ik" class="mobile-image mobile" style="opacity: 0">
             <p class="story" style="opacity: 0">Motivatie, enthousiasme en nieuwsgierigheid zorgen ervoor dat ik elke dag nieuwe dingen leer op het Mediacollege Amsterdam binnen het vakgebied van een media developer.

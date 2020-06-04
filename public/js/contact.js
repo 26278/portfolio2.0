@@ -1,0 +1,1 @@
+gsap.fromTo('.businesscard', 1.5, {x: -50}, {delay: .15, x: 0, opacity: 1, ease: "power2.out"} );
