@@ -1,0 +1,162 @@
+/* -=-=-=-=- Modal boxes default styling -=-=-=-=-=- */
+.modal-project{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+.modal-window{
+    position: absolute;
+    left: 5%;
+    top: 10%;
+    width: 90%;
+    height: 80%;
+    background-color: #E9F4F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: scroll;
+}
+
+.modal-filter{
+    display: none;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.close-btn{
+    position: absolute;
+    right: 7%;
+    top: 2vw;
+    height: 24px;
+    z-index: 4;
+
+}
+
+.modal-text{
+    position: relative;
+    width: 80%;
+}
+.modal-side{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.modal-side .p-logo{
+    margin-top: 20px;
+}
+.modal-skills{
+    font-family: Ubuntu-Medium, sans-serif;
+    font-size: 12px;
+    margin: 1em 0;
+}
+
+
+
+/* -=-=-=-=-=- End of modal boxes default styling -=-=-=-=-=- */
+
+.title{
+    margin: 1em 0;
+    font-family: Ubuntu-Medium, sans-serif;
+    font-size: 18px;
+    margin-left: 5%;
+}
+
+.project-section{
+    position: relative;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.project {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    background-color: #E9F4F2;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+.project::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #116050;
+}
+.p-logo{
+    position: relative;
+    max-width: 80%;
+    max-height: 200px;
+}
+.project-logo{
+    margin-top: 7px;
+}
+.p-title{
+    font-family: Ubuntu-Medium, sans-serif;
+    font-size: 14px;
+    margin: 1em 0;
+
+}
+.project-title{
+}
+.p-subtitle{
+    font-family: OpenSans-Italic, sans-serif;
+    font-size: 14px;
+    margin: 0 0 3em 0;
+}
+.project-subtitle{
+}
+.p-desc{
+    font-family: OpenSans, sans-serif;
+    font-size: 14px;
+    line-height: 1.2em;
+    width: 80%;
+}
+.project-short-desc{
+}
+.readmore {
+    font-size: 16px;
+    border-radius: 100px;
+    padding: .6em 1.2em;
+    white-space: nowrap;
+    color: #F5A65B;
+    background-color: transparent;
+    border: none;
+    -webkit-box-shadow: inset 0 0 0 2px #F5A65B;
+    -moz-box-shadow: inset 0 0 0 2px #F5A65B;
+    box-shadow: inset 0 0 0 2px #F5A65B;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: .22s;
+    fill: #F5A65B;
+    text-decoration: none;
+    margin: 2em 0;
+}
+

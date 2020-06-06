@@ -22,7 +22,23 @@ class MasterController
         $title = "Projecten";
         $page = str_replace(' ', '', strtolower($title));
         $active = $page;
-        return view('projects', ['page' => $title, 'css' => $page, 'active' => $active]);
+
+        // Pad naar JSON file opslaan in variabele
+        $jsonFile = database_path('modals.json');
+
+        // Checken of bestand bestaat
+        if(!file_exists($jsonFile)) {
+            return 'JSON file niet gevonden: ' . $jsonFile;
+        }
+
+        // Inhoud inlezen
+        $json = file_get_contents($jsonFile);
+
+        // Terug zetten naar array in PHP
+        $modalData = json_decode($json);
+
+
+        return view('projects', ['page' => $title, 'css' => $page, 'active' => $active, 'modals' => $modalData]);
     }
     public function showAboutMe(){
         $title = "Over mij";
