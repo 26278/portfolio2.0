@@ -67,3 +67,8 @@ window.onclick = function(event) {
     }
 
 };
+
+var tl = gsap.timeline();
+tl.fromTo('#title1', .5, {x: -50, opacity: 0}, {x: 0, opacity: 1});
+tl.fromTo('.project', .5, {y: 50, opacity: 0}, {y: 0, opacity: 1, stagger: .3}, "-=.3");
+tl.fromTo('#title2', .5, {x: -50, opacity: 0}, {x: 0, opacity: 1}, "-=1.4");

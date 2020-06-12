@@ -24,21 +24,27 @@ class MasterController
         $active = $page;
 
         // Pad naar JSON file opslaan in variabele
-        $jsonFile = database_path('modals.json');
+        $topProjectsFile = database_path('top-projects.json');
+        $otherProjectsFile = database_path('other-projects.json');
 
         // Checken of bestand bestaat
-        if(!file_exists($jsonFile)) {
-            return 'JSON file niet gevonden: ' . $jsonFile;
+        if(!file_exists($topProjectsFile)) {
+            return 'JSON file niet gevonden: ' . $topProjectsFile;
+        }
+        if(!file_exists($otherProjectsFile)) {
+            return 'JSON file niet gevonden: ' . $topProjectsFile;
         }
 
         // Inhoud inlezen
-        $json = file_get_contents($jsonFile);
+        $topProjectsJson = file_get_contents($topProjectsFile);
+        $otherProjectsJson = file_get_contents($otherProjectsFile);
 
         // Terug zetten naar array in PHP
-        $modalData = json_decode($json);
+        $topProjectsModalData = json_decode($topProjectsJson);
+        $otherProjectsModalData = json_decode($otherProjectsJson);
 
 
-        return view('projects', ['page' => $title, 'css' => $page, 'active' => $active, 'modals' => $modalData]);
+        return view('projects', ['page' => $title, 'css' => $page, 'active' => $active, 'topProjects' => $topProjectsModalData, 'otherProjects' => $otherProjectsModalData]);
     }
     public function showAboutMe(){
         $title = "Over mij";
